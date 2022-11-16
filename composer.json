@@ -1,5 +1,5 @@
 {
-    "name": "smeghead/php-class-diagram",
+    "name": "bastien-wink/php-class-diagram",
     "description": "A CLI tool that parses the PHP source directory and outputs PlantUML scripts.",
     "type": "library",
     "require": {
@@ -20,7 +20,7 @@
     "authors": [
         {
             "name": "smeghead",
-            "email": "smeghead7@gmail.com"
+            "email": "contact@wink-dev.com"
         }
     ],
     "scripts": {

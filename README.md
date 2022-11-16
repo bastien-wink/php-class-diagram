@@ -2,6 +2,8 @@
 
 A CLI tool that parses the PHP source directory and outputs PlantUML class diagram scripts.
 
+Forked from https://packagist.org/packages/smeghead/php-class-diagram
+
 # Features
 
  * Generating class diagrams from source code helps improve continuous design.
