@@ -13,14 +13,19 @@ require_once(__DIR__ . '/PhpPropertyDummy.php');
  */
 class PhpClassDummy extends PhpClass {
     public function __construct(string $directory, string $filename, string $data) {
-        $dirs = preg_split('/[\\\\\/]/', $filename);
-        array_pop($dirs);
+        $dirs = preg_split('/[\\\\\/]/', $directory);
+
         $this->dirs = $dirs;
         $d = json_decode($data);
         if ($d === null) {
             throw new \Exception('failed to decode josn.' . $this->getJsonError());
         }
         $this->data = $d;
+
+    }
+    public function getNamespace(): array
+    {
+        return $this->dirs;
     }
 
     public function getClassType(): PhpType {

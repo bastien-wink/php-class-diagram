@@ -275,9 +275,9 @@ EOJ;
             'disable-class-methods' => true,
         ]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Product.php', $this->product_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Price.php', $this->price_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Name.php', $this->name_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Product.php', $this->product_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Price.php', $this->price_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Name.php', $this->name_expression), $options),
         ];
         $rel = new Relation($entries, $options);
         $namespace = $rel->getPackage();
@@ -300,9 +300,9 @@ EOJ;
             'disable-class-methods' => true,
         ]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Product.php', $this->product_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Price.php', $this->price_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Name.php', $this->name_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Product.php', $this->product_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Price.php', $this->price_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Name.php', $this->name_expression), $options),
         ];
         $rel = new Relation($entries, $options);
 
@@ -326,8 +326,8 @@ EOS;
             'disable-class-methods' => true,
         ]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Product.php', $this->product_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Price.php', $this->price_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Product.php', $this->product_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Price.php', $this->price_expression), $options),
             new Entry('product/utility', new PhpClassDummy('product/utility', 'product/Name.php', $this->name_expression), $options),
         ];
         $rel = new Relation($entries, $options);
@@ -337,11 +337,11 @@ EOS;
     class product.Product
     class product.Price
     package utility as product.utility <<Rectangle>> {
-      class product.Name
+      class product.utility.Name
     }
   }
-  product.Product ..> product.Name
   product.Product ..> product.Price
+  product.Product ..> product.utility.Name
 @enduml
 EOS;
         $this->assertSame($expected, implode(PHP_EOL, $rel->dump()), 'output PlantUML script.');
@@ -354,7 +354,7 @@ EOS;
             'disable-class-methods' => true,
         ]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Interface_.php', $this->interface_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Interface_.php', $this->interface_expression), $options),
         ];
         $rel = new Relation($entries, $options);
         $expected =<<<EOS
@@ -373,7 +373,7 @@ EOS;
             'disable-class-methods' => true,
         ]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Interface_.php', $this->interface_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Interface_.php', $this->interface_expression), $options),
         ];
         $rel = new Relation($entries, $options);
         $expected =<<<EOS
@@ -393,7 +393,7 @@ EOS;
             'enable-class-methods' => true,
         ]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Interface_.php', $this->interface_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Interface_.php', $this->interface_expression), $options),
         ];
         $rel = new Relation($entries, $options);
         $expected =<<<EOS
@@ -413,8 +413,8 @@ EOS;
             'enable-class-methods' => true,
         ]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Interface_.php', $this->interface_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Implement_.php', $this->implement_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Interface_.php', $this->interface_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Implement_.php', $this->implement_expression), $options),
         ];
         $rel = new Relation($entries, $options);
         $expected =<<<EOS
@@ -438,9 +438,9 @@ EOS;
             'disable-class-methods' => true,
         ]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Product.php', $this->product_method_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Price.php', $this->price_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Name.php', $this->name_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Product.php', $this->product_method_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Price.php', $this->price_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Name.php', $this->name_expression), $options),
         ];
         $rel = new Relation($entries, $options);
 
@@ -462,9 +462,9 @@ EOS;
             'disable-class-methods' => true,
         ]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Product.php', $this->product_method_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Price.php', $this->price_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Name.php', $this->name_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Product.php', $this->product_method_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Price.php', $this->price_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Name.php', $this->name_expression), $options),
         ];
         $rel = new Relation($entries, $options);
 
@@ -486,8 +486,8 @@ EOS;
             'disable-class-methods' => true,
         ]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Product.php', $this->packaged_product_expression), $options),
-            new Entry('product/utility', new PhpClassDummy('product/utility', 'product/utility/Name.php', $this->packaged_name_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Product.php', $this->packaged_product_expression), $options),
+            new Entry('product/utility', new PhpClassDummy('product/utility', 'Name.php', $this->packaged_name_expression), $options),
         ];
         $rel = new Relation($entries, $options);
         $expected =<<<EOS

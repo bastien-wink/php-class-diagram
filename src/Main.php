@@ -19,7 +19,7 @@ class Main {
         $entries = [];
         foreach ($finder as $file) {
             try {
-                $reflections = PhpReader::parseFile(realpath($directory), $file->getRealPath(), $options);
+                $reflections = PhpReader::parseFile(dirname($file->getRealPath()), $file->getRealPath(), $options);
                 foreach ($reflections as $reflection) {
                   $entries[] = new Entry($file->getRelativePath(), $reflection->getInfo(), $options);
                 }
