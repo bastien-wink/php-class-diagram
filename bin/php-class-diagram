@@ -59,11 +59,6 @@ if (empty($directory)) {
     fputs(STDERR, $usage);
     exit(-1);
 }
-if ( ! is_dir($directory)) {
-    fputs(STDERR, sprintf("ERROR: specified directory dose not exists. directory: %s\n", $directory));
-    fputs(STDERR, $usage);
-    exit(-1);
-}
 
 use Smeghead\PhpClassDiagram\Config\Options;
 use Smeghead\PhpClassDiagram\Main;
