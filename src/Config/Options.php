@@ -12,6 +12,8 @@ class Options {
     const DIAGRAM_PACKAGE = 'package';
     const DIAGRAM_JIG = 'jig';
 
+    const DEFAULT_PACKAGE_DEPTH = 5;
+
     public function __construct(array $opt) {
         $this->opt = $opt;
     }
@@ -74,5 +76,9 @@ class Options {
         }
         // default
         return self::PHP7;
+    }
+
+    public function packageDepth(): int {
+        return $this->opt['package-depth'] ?? self::DEFAULT_PACKAGE_DEPTH;
     }
 }

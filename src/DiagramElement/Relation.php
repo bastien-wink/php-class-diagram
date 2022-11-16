@@ -7,11 +7,15 @@ class Relation {
     private Options $options;
     private Package $package;
 
+    /**
+     * @param Entry[] $entries
+     */
     public function __construct(array $entries, Options $options) {
         $this->options = $options;
         $this->package = new Package([], 'ROOT', $options);
         foreach ($entries as $e) {
-            $this->package->addEntry(preg_split('/[\\\\\/]/', $e->directory), $e);
+
+            $this->package->addEntry(array_slice($e->class->getNamespace(), 0, $options->packageDepth()), $e);
         }
     }
 

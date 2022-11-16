@@ -177,9 +177,9 @@ EOJ;
     public function testInitialize(): void {
         $options = new Options([]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Product.php', $this->product_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Price.php', $this->price_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Name.php', $this->name_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Product.php', $this->product_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Price.php', $this->price_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Name.php', $this->name_expression), $options),
         ];
         $rel = new Relation($entries, $options);
 
@@ -189,9 +189,9 @@ EOJ;
     public function testGetRelations1(): void {
         $options = new Options([]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Product.php', $this->product_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Price.php', $this->price_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Name.php', $this->name_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Product.php', $this->product_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Price.php', $this->price_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Name.php', $this->name_expression), $options),
         ];
         $rel = new Relation($entries, $options);
         $relations = $rel->getRelations();
@@ -204,10 +204,10 @@ EOJ;
     public function testGetRelations2(): void {
         $options = new Options([]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Product.php', $this->product_with_tags_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Price.php', $this->price_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Name.php', $this->name_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/Tag.php', $this->tag_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Product.php', $this->product_with_tags_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Price.php', $this->price_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Name.php', $this->name_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Tag.php', $this->tag_expression), $options),
         ];
         $rel = new Relation($entries, $options);
         $relations = $rel->getRelations();
@@ -221,8 +221,8 @@ EOJ;
     public function testGetRelations_extends1(): void {
         $options = new Options([]);
         $entries = [
-            new Entry('product', new PhpClassDummy('product', 'product/Tag.php', $this->tag_expression), $options),
-            new Entry('product', new PhpClassDummy('product', 'product/SubTag.php', $this->subtag_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'Tag.php', $this->tag_expression), $options),
+            new Entry('product', new PhpClassDummy('product', 'SubTag.php', $this->subtag_expression), $options),
         ];
         $rel = new Relation($entries, $options);
         $relations = $rel->getRelations();
