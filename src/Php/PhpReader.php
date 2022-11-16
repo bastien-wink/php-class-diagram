@@ -59,9 +59,6 @@ class PhpReader {
      * @return PhpClass[]
      */
     private static function getClasses(string $relativePath, array $ast): array {
-        if (count($ast) === 0) {
-            return null;
-        }
         $classes = [];
         foreach ($ast as $element) {
             if ($element instanceOf ClassLike) {

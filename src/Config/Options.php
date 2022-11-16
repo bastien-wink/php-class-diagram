@@ -79,6 +79,6 @@ class Options {
     }
 
     public function packageDepth(): int {
-        return $this->opt['package-depth'] ?? self::DEFAULT_PACKAGE_DEPTH;
+        return is_numeric($this->opt['package-depth'])?(int)$this->opt['package-depth'] : self::DEFAULT_PACKAGE_DEPTH;
     }
 }

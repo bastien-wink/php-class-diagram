@@ -14,7 +14,6 @@ class Relation {
         $this->options = $options;
         $this->package = new Package([], 'ROOT', $options);
         foreach ($entries as $e) {
-
             $this->package->addEntry(array_slice($e->class->getNamespace(), 0, $options->packageDepth()), $e);
         }
     }
