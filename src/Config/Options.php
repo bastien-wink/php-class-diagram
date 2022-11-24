@@ -81,4 +81,8 @@ class Options {
     public function packageDepth(): int {
         return is_numeric($this->opt['package-depth'])?(int)$this->opt['package-depth'] : self::DEFAULT_PACKAGE_DEPTH;
     }
+
+    public function notName(): array {
+        return $this->opt['not-name'] ?? [];
+    }
 }

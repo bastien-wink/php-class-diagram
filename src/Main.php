@@ -15,7 +15,10 @@ class Main {
     public function __construct(string $directory, Options $options) {
         $finder = new Finder();
         $finder->files()->in($directory);
-        $finder->files()->name('*.php');
+        $finder->files()->name('*.php')
+            ->notName($options->notName())
+        ;
+
         $entries = [];
         foreach ($finder as $file) {
             try {

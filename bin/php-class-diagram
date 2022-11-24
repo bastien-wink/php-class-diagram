@@ -20,6 +20,7 @@ $options = getopt('hv',[
     'enable-class-methods',
     'disable-class-methods',
     'package-depth::',
+    'not-name::',
     'php7',
     'php8',
 ], $rest_index);
